@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Investment & Review App</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+</head>
+<body>
+
+<!-- Authentication Section -->
+<div id="auth-section">
+  <div class="card">
+    <h2 id="auth-title">Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="auth-btn">Login</button>
+    <p id="toggle-auth">Don't have an account? <span>Register</span></p>
+  </div>
+</div>
+
+<!-- User Dashboard -->
+<div id="dashboard" class="hidden">
+  <header>
+    <h2>Welcome, <span id="user-name"></span></h2>
+    <button id="logout">Logout</button>
+  </header>
+
+  <div class="stats">
+    <div class="stat"><h3>Deposited</h3><p>$<span id="user-deposit">0</span></p></div>
+    <div class="stat"><h3>Earnings</h3><p>$<span id="user-earnings">0</span></p></div>
+    <div class="stat"><h3>Level</h3><p id="user-level">1</p></div>
+  </div>
+
+  <div class="actions">
+    <button id="deposit-btn">Deposit</button>
+    <button id="withdraw-btn">Withdraw</button>
+  </div>
+
+  <div class="products">
+    <h3>Products to Review</h3>
+    <div id="product-list"></div>
+  </div>
+</div>
+
+<!-- Deposit Page -->
+<div id="deposit-page" class="hidden">
+  <button id="back-dashboard">Back</button>
+  <h2>Deposit USDT (TRC-20)</h2>
+  <div class="wallet-info">
+    <p>Wallet Address:</p>
+    <input type="text" id="wallet-address" readonly value="TXYZ1234RANDOMTRC20ADDRESS5678">
+    <button id="copy-wallet">Copy Address</button>
+    <div id="wallet-qr"></div>
+  </div>
+  <div class="deposit-form">
+    <input type="number" id="deposit-amount" placeholder="Enter deposit amount">
+    <input type="file" id="deposit-screenshot" accept="image/*">
+    <button id="submit-deposit">Submit Deposit</button>
+  </div>
+</div>
+
+<!-- Admin Panel -->
+<div id="admin-panel" class="hidden">
+  <header>
+    <h2>Admin Panel</h2>
+    <button id="close-admin">Close</button>
+  </header>
+
+  <h3>Pending Deposits</h3>
+  <table>
+    <thead><tr><th>User</th><th>Amount</th><th>Screenshot</th><th>Approve</th></tr></thead>
+    <tbody id="pending-deposits"></tbody>
+  </table>
+
+  <h3>All Users</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Deposit</th>
+        <th>Earnings</th>
+        <th>Level</th>
+        <th>Upgrade</th>
+        <th>Downgrade</th>
+        <th>Save Balances</th>
+      </tr>
+    </thead>
+    <tbody id="user-table"></tbody>
+  </table>
+
+  <h3>Add Product</h3>
+  <input id="product-name" placeholder="Product name">
+  <input id="product-price" type="number" placeholder="Product price">
+  <input id="product-image" type="file" accept="image/*">
+  <button id="add-product">Add Product</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

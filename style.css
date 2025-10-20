@@ -1,0 +1,20 @@
+body {margin:0; padding:0; font-family:Poppins,sans-serif; background:#0b121a; color:#fff;}
+.hidden {display:none;}
+.card, #dashboard, #admin-panel, #deposit-page {max-width:400px;margin:auto;padding:15px;border-radius:12px;background:#1b2735;}
+header, .stats, .products, .actions {width:100%; margin-bottom:15px;}
+header {display:flex; justify-content:space-between; align-items:center; padding:10px; background:#111c28; border-radius:8px;}
+.stats {display:flex; flex-wrap:wrap; justify-content:space-between;}
+.stat {flex:1 1 45%; margin:5px; padding:10px; background:#16222f; border-radius:8px; text-align:center;}
+.product {display:flex; flex-wrap:wrap; align-items:center; margin:5px 0; padding:10px; background:#1d2a3a; border-radius:8px;}
+.product img {max-width:80px; max-height:80px; margin-right:10px;}
+.product-info {flex:1; text-align:left;}
+.actions button, .product button, button, #deposit-page button, #deposit-page input {width:100%; margin:5px 0; padding:10px; border-radius:8px; border:none; background:#00ffaa; cursor:pointer; font-weight:bold;}
+table {width:100%; font-size:14px; border-collapse:collapse;}
+td,th {border:1px solid #333; padding:6px; text-align:center;}
+input {padding:6px; margin:4px; border-radius:6px; border:none; width:95%;}
+#wallet-qr {margin:10px 0;}
+@media(max-width:500px){
+    .stat {flex:1 1 100%;}
+    .product {flex-direction:column; align-items:flex-start;}
+    .product img {margin-bottom:5px;}
+}
